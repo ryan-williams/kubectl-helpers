@@ -1,0 +1,37 @@
+
+defn k kubectl
+defn kg k get
+defn kgy kg -o yaml
+defn kgj kg -o json
+defn kcf k config
+defn kx k explain
+defn kar k api-resources
+defn kkf k -n kubeflow
+defn kd k describe
+defn kgce kg cloudendpoints
+defn kdce kd cloudendpoints
+
+
+saved_model() {
+  cat "$1" | protoc --decode=tensorflow.SavedModel -I$c/tensorflow $c/tensorflow/tensorflow/core/protobuf/saved_model.proto	
+}
+export -f saved_model
+
+sha_dir() {
+	for dir in "$@"; do
+		d="${dir%/}"
+		escaped="$(echo "$d/" | escape-regex)"
+		find "$d" -type f | p shasum | perl -pe "s/$escaped//" | sort -k2
+	done
+}
+export -f sha_dir
+
+diff_apply() {
+	cmd="$1"
+	shift
+	if [ $# -eq 2 ]; then
+		echo "$1" "$2" | pc "diff <($cmd {1}) <($cmd {2})"
+	else
+		pc "diff <($cmd {1}) <($cmd {2})"
+	fi
+}
