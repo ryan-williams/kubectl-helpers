@@ -12,11 +12,6 @@ defn kgce kg cloudendpoints
 defn kdce kd cloudendpoints
 
 
-saved_model() {
-  cat "$1" | protoc --decode=tensorflow.SavedModel -I$c/tensorflow $c/tensorflow/tensorflow/core/protobuf/saved_model.proto	
-}
-export -f saved_model
-
 sha_dir() {
 	for dir in "$@"; do
 		d="${dir%/}"
