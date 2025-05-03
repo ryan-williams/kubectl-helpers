@@ -6,11 +6,12 @@ defn kgj kg -o json
 defn kcf k config
 defn kx k explain
 defn kar k api-resources
-defn kkf k -n kubeflow
 defn kd k describe
 defn kgce kg cloudendpoints
 defn kdce kd cloudendpoints
 
+defn kns kubens
+defn kcx kubectx
 
 sha_dir() {
 	for dir in "$@"; do
