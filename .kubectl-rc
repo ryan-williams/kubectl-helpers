@@ -1,12 +1,16 @@
 
 defn k kubectl
 defn kg k get
-defn kgy kg -o yaml
 defn kgj kg -o json
+defn kgp k get pods
+defn kgw kg workflow
+defn kgy kg -o yaml
+defn klg k logs
 defn kcf k config
 defn kx k explain
 defn kar k api-resources
 defn kd k describe
+defn kdw k describe workflow
 defn kgce kg cloudendpoints
 defn kdce kd cloudendpoints
 
