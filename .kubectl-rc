@@ -2,6 +2,7 @@
 defn k kubectl
 defn kg k get
 defn kgj kg -o json
+defn kdp k describe pod
 defn kgp k get pods
 defn kgw kg workflow
 defn kgy kg -o yaml
